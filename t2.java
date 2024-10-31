@@ -22,4 +22,26 @@ public class Point {
     public void setY(int y) {
         this.y = y;
     }
+
+    @Override
+    public String toString(){
+        return ""+x+", "+y;
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Point point = (Point) obj;
+        return x == point.x && y == point.y;
+    }
+    @Override 
+    public int hashCode(){
+        return x+y*1239214;
+    }
+
+    public void mirrorCenter(){
+        x=-x;
+        y=-y;
+    }
+    
 }
